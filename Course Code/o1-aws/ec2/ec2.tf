@@ -19,6 +19,10 @@ resource "aws_instance" "terraform_aws_practice" {
   ami = "ami-0f88e80871fd81e91"
   instance_type = "t2.micro"
 
+  root_block_device {
+    delete_on_termination = true
+  }
+
   tags = {
     Name = "TerraformPracticeInstance"
   }
