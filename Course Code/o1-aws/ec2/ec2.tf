@@ -17,4 +17,5 @@ provider "aws" {
 
 resource "aws_ami" "terraform_aws_practice" {
   name = "terraform_awsEC2_prac"
+  root_device_name = "dev/secops"
 }
