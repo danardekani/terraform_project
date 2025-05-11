@@ -16,6 +16,11 @@ provider "aws" {
 }
 
 resource "aws_ami" "terraform_aws_practice" {
-  name = "terraform_awsEC2_prac"
-  root_device_name = "dev/secops"
+  name = "aws_tf_prac"
+  ami = "ami-0f88e80871fd81e91"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "TerraformPracticeInstance"
+  }
 }
