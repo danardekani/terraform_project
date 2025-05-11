@@ -15,8 +15,7 @@ provider "aws" {
 
 }
 
-resource "aws_ami" "terraform_aws_practice" {
-  name = "aws_tf_prac"
+resource "aws_instance" "terraform_aws_practice" {
   ami = "ami-0f88e80871fd81e91"
   instance_type = "t2.micro"
 
