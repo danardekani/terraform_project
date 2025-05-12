@@ -24,6 +24,6 @@ resource "aws_instance" "terraform_aws_practice" {
   }
 
   tags = {
-    Name = "TerraformPracticeInstance"
+    Name = "TerraformPracticeInstance-1"
   }
 }
