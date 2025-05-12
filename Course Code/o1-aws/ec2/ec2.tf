@@ -40,6 +40,7 @@ data "aws_ebs_volumes" "root_volume" {
   }
 }
 
+# This block create a root snapshot
 resource "aws_ebs_snapshot" "snapshot_removal" {
   volume_id = data.aws_ebs_volumes.root_volume.ids[0]
 
