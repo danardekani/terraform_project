@@ -30,7 +30,7 @@ resource "aws_instance" "terraform_aws_practice" {
   }
 }
 
-# Variables for creating and destroying EBS snapshots
+# Data source for creating and destroying EBS snapshots
 data "aws_ebs_volumes" "root_volume" {
   depends_on = [aws_instance.terraform_aws_practice]
 
