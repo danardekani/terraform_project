@@ -15,10 +15,12 @@ provider "aws" {
 
 }
 
+# Definte EC2 instance parameters
 resource "aws_instance" "terraform_aws_practice" {
   ami = "ami-0f88e80871fd81e91"
   instance_type = "t2.micro"
 
+  # Main EBS Volume that is attached to an EC2 instance
   root_block_device {
     delete_on_termination = true
   }
@@ -28,6 +30,7 @@ resource "aws_instance" "terraform_aws_practice" {
   }
 }
 
+# Variables for creating and destroying EBS snapshots
 data "aws_ebs_volumes" "root_volume" {
   depends_on = [aws_instance.terraform_aws_practice]
 
