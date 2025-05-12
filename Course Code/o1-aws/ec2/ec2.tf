@@ -28,6 +28,15 @@ resource "aws_instance" "terraform_aws_practice" {
   }
 }
 
+data "aws_ebs_volumes" "root_volume" {
+  depends_on = [aws_instance.ec2]
+
+  filter {
+    name   = "attachment.instance-id"
+    values = [aws_instance.ec2.id]
+  }
+}
+
 resource "aws_ebs_snapshot" "snapshot_removal" {
   volume_id = data.aws_ebs_volumes.root_volume.ids[0]
 
