@@ -48,6 +48,6 @@ resource "aws_ebs_snapshot" "root_snapshot" {
     Name = "RootVolumeSnapshot"
   }
   lifecycle {
-    prevent_destroy = false
+    prevent_destroy = true
   }
 }
