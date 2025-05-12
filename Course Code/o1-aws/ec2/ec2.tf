@@ -27,3 +27,14 @@ resource "aws_instance" "terraform_aws_practice" {
     Name = "TerraformPracticeInstance-1"
   }
 }
+
+resource "aws_ebs_snapshot" "snapshot_removal" {
+  volume_id = data.aws_ebs_volumes.root_volume.ids[0]
+
+  tags = {
+    Name = "RootVolumeSnapshot"
+  }
+  lifecycle {
+    prevent_destroy = false
+  }
+}
