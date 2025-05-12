@@ -29,11 +29,11 @@ resource "aws_instance" "terraform_aws_practice" {
 }
 
 data "aws_ebs_volumes" "root_volume" {
-  depends_on = [aws_instance.ec2]
+  depends_on = [aws_instance.terraform_aws_practice]
 
   filter {
     name   = "attachment.instance-id"
-    values = [aws_instance.ec2.id]
+    values = [aws_instance.terraform_aws_practice.id]
   }
 }
 
