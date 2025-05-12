@@ -30,7 +30,7 @@ resource "aws_instance" "terraform_aws_practice" {
   }
 }
 
-# Data source for creating and destroying EBS snapshots
+# Data source for searching AWS for EBS volumes attached to this specific instance
 data "aws_ebs_volumes" "root_volume" {
   depends_on = [aws_instance.terraform_aws_practice]
 
